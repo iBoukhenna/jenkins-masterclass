@@ -1,0 +1,6 @@
+10.10.3.204
+- sudo su - jenkins
+- ssh-keygen
+
+10.10.3.37
+- ssh-copy-id -i id_rsa.pub jenkins@10.10.3.204

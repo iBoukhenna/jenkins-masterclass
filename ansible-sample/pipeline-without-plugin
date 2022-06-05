@@ -1,0 +1,8 @@
+node {
+    stage('Clone') {
+        git 'https://github.com/iBoukhenna/jenkins-masterclass.git'
+    }
+    stage('Ansible') {
+        sh 'ansible-playbook -i ansible-sample/hosts.yml ansible-sample/playbook.yml'
+    }
+}

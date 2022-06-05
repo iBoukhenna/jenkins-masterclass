@@ -1,0 +1,14 @@
+node {
+    stage('Clone') {
+        git 'https://github.com/iBoukhenna/jenkins-masterclass.git'
+    }
+    stage('Ansible') {
+        ansiblePlaybook(
+            colorized: true,
+            become: true,
+            playbook : 'ansible-sample/playbook.yml',
+            inventory : '${HOST}',
+            extras : '--extras-vars "mavariable=\\'${MAVARIABLE}\\'"'
+        )
+    }
+}
